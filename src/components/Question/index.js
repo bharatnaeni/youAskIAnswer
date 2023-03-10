@@ -2,7 +2,8 @@ import './index.css'
 
 const Question = props => {
   const {item} = props
-  const {question} = item
+  const {question, answer, id} = item
+  console.log(answer)
 
   return <li>{question}</li>
 }

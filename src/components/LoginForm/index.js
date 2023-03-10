@@ -101,6 +101,7 @@ class LoginForm extends Component {
           <button
             className={`person ${isSelected ? '' : 'additional'}`}
             onClick={this.isSelectedStudent}
+            type="button"
           >
             <h1>Student Login</h1>
           </button>

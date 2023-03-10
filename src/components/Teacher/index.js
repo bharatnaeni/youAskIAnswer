@@ -1,6 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
-import {v4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 
 import Header from '../Header'
 import Question from '../Question'
@@ -24,7 +23,7 @@ class Teacher extends Component {
   onClickAddQuestion = () => {
     const {input} = this.state
     const newQuestion = {
-      id: v4,
+      id: uuidv4(),
       question: input,
       answer: '',
     }
@@ -36,6 +35,10 @@ class Teacher extends Component {
   onClickStoreData = () => {
     const {questions} = this.state
     localStorage.setItem('Questions', JSON.stringify(questions))
+  }
+
+  onClickDeleteData = () => {
+    this.setState({questions: []}, this.onClickStoreData)
   }
 
   render() {
@@ -56,7 +59,11 @@ class Teacher extends Component {
             onChange={this.onChangeInput}
             value={input}
           />
-          <button className="button" onClick={this.onClickAddQuestion}>
+          <button
+            type="button"
+            className="button"
+            onClick={this.onClickAddQuestion}
+          >
             Add
           </button>
           <h1 className="todo-items-heading">
@@ -67,8 +74,19 @@ class Teacher extends Component {
               <Question item={each} key={each.id} />
             ))}
           </ol>
-          <button className="button" onClick={this.onClickStoreData}>
+          <button
+            className="button"
+            type="button"
+            onClick={this.onClickStoreData}
+          >
             Send Questions
+          </button>
+          <button
+            className="button"
+            type="button"
+            onClick={this.onClickDeleteData}
+          >
+            Delete Questions
           </button>
         </div>
       </>

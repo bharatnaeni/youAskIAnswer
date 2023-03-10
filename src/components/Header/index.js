@@ -13,6 +13,7 @@ const Header = props => {
   return (
     <nav>
       <h1>Hello</h1>
+      <button onClick={onClickLogout}>Logout</button>
     </nav>
   )
 }
