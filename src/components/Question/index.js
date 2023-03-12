@@ -5,7 +5,12 @@ const Question = props => {
   const {question, answer, id} = item
   console.log(answer)
 
-  return <li>{question}</li>
+  return (
+    <li>
+      <h1>{question}</h1>
+      <span>{answer}</span>
+    </li>
+  )
 }
 
 export default Question
