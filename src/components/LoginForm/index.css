@@ -4,9 +4,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 90%;
-  max-width: 1110px;
+  width: 100%;
+  max-width: 1600px;
   margin: auto;
+  background-color: #d7dfe9;
 }
 
 @media screen and (min-width: 992px) {
@@ -59,6 +60,7 @@
   border-radius: 8px;
   width: 100%;
   max-width: 450px;
+  background-color: #ffffff;
 }
 
 @media screen and (min-width: 992px) {
@@ -146,4 +148,22 @@
 
 .additional {
   background-color: darkcyan;
+}
+
+.sign-log-container {
+  margin: 20px;
+}
+
+.teacher-student-continer {
+  margin-bottom: 10px;
+}
+
+.person {
+  height: 100px;
+  width: 200px;
+  border-radius: 20px;
+}
+.user-message {
+  font-family: 'Roboto';
+  color: red;
 }

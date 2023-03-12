@@ -1,4 +1,4 @@
-import {Link, withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
@@ -8,12 +8,14 @@ const Header = props => {
   const onClickLogout = () => {
     Cookies.remove('jwt_token')
     const {history} = props
-    history.replace('/login')
+    history.replace('/')
   }
   return (
-    <nav>
-      <h1>Hello</h1>
-      <button onClick={onClickLogout}>Logout</button>
+    <nav className="nav-header">
+      <h1 className="nav-heading">Hello</h1>
+      <button type="button" onClick={onClickLogout} className="logout-button">
+        Logout
+      </button>
     </nav>
   )
 }

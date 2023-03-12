@@ -10,10 +10,10 @@ import './App.css'
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/login" component={LoginForm} />
+      <Route exact path="/" component={LoginForm} />
       <ProtectedRoute exact path="/teacher" component={Teacher} />
       <ProtectedRoute exact path="/student" component={Student} />
-      <ProtectedRoute path="/not-found" component={NotFound} />
+      <Route path="/not-found" component={NotFound} />
       <Redirect to="/not-found" />
     </Switch>
   </BrowserRouter>

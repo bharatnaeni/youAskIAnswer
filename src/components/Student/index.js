@@ -42,12 +42,14 @@ class Student extends Component {
       const b = myFunction[array[2]]
       const operatorFunction = myFunction[array[1]]
       const result = operatorFunction(a, b)
+      console.log(result)
       return {
         ...each,
         answer: result,
       }
     })
     localStorage.setItem('Questions', JSON.stringify(modifiedData))
+    this.setState({questions: modifiedData})
   }
 
   render() {
@@ -56,19 +58,12 @@ class Student extends Component {
       <>
         <Header />
         <div className="product-sections">
-          <h1>Student</h1>
+          <h1>Student DashBoard</h1>
           <ol className="todo-items-container" id="todoItemsContainer">
             {questions.map(each => (
               <Question item={each} key={each.id} />
             ))}
           </ol>
-          <button
-            className="button"
-            onClick={this.onClickStoreData}
-            type="button"
-          >
-            Send Questions
-          </button>
         </div>
       </>
     )
